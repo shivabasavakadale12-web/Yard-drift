@@ -20,7 +20,6 @@ public class Debugcollision : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(gamescene);
-        Debug.Log(SceneManager.GetActiveScene().name);
     }
 
 }
