@@ -7,8 +7,8 @@
             "id": "121d8ea7-2513-4f6c-bafb-526f831e79fd",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Value",
+                    "name": "PlayerMove",
+                    "type": "PassThrough",
                     "id": "7325a1db-3846-4a66-bc8a-44c24a7072cd",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -24,7 +24,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "PlayerMove",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -35,7 +35,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "PlayerMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -46,18 +46,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "PlayerMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
                     "id": "00daf8d5-136e-4987-a672-f3b7279e745c",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "PlayerMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -68,7 +68,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "PlayerMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
