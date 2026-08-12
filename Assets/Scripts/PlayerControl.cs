@@ -30,6 +30,6 @@ public class PlayerControl : MonoBehaviour
          float rate = inputdirection.magnitude > 0.1f ? acceleration : deceleration;
           currentVelocity = Vector3.MoveTowards(currentVelocity, targetVelocity, rate * Time.deltaTime);
       
-       rb.MovePosition(rb.position + currentVelocity * Time.deltaTime);
+     rb.linearVelocity = currentVelocity;
     }
 }
