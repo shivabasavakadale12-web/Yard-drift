@@ -1,9 +1,26 @@
 using UnityEngine;
-
+using System.Collections;
+using Unity.VectorGraphics;
+using UnityEngine.SceneManagement;
 public class Debugcollision : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+
+    const string gamescene = "GameScene";
+
+    private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("fuck yeah collision is working, ig issue with size or smtg idk yet :(");
+       if(other.gameObject.CompareTag("Enemy"))
+       {
+            StartCoroutine(startdeadrotine() );
+       }
     }
+
+    IEnumerator startdeadrotine()
+    {
+        GetComponent<MeshRenderer>().enabled = false;
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(gamescene);
+        Debug.Log(SceneManager.GetActiveScene().name);
+    }
+
 }
