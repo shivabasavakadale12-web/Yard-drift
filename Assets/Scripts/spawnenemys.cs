@@ -5,7 +5,7 @@ public class spawnenemys : MonoBehaviour
     [SerializeField] GameObject[] enemys;
     [SerializeField] Transform[] spawns;
  
-    float timetospawn = 8f;
+    float timetospawn = 3f;
     void Start()
     {
         StartCoroutine(spawnEnemy());
@@ -14,10 +14,13 @@ public class spawnenemys : MonoBehaviour
 
     IEnumerator spawnEnemy()
     {
-        int randomenemy = Random.Range(0, enemys.Length);
-        int randomspawn = Random.Range(0, spawns.Length);
-        Instantiate(enemys[randomenemy], spawns[randomspawn].position, Quaternion.identity);
-        yield return new WaitForSeconds(timetospawn);
+        while (true)
+        {
+            int randomenemy = Random.Range(0, enemys.Length);
+            int randomspawn = Random.Range(0, spawns.Length);
+            Instantiate(enemys[randomenemy], spawns[randomspawn].position, Quaternion.identity);
+            yield return new WaitForSeconds(timetospawn);
+        }
     }
 
 }

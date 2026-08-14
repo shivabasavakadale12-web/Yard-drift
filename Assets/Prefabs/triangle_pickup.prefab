@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 1326251310426798137}
   - component: {fileID: 5971785367458491051}
   - component: {fileID: 8224303530682668401}
+  - component: {fileID: 2075724468113035943}
+  - component: {fileID: 5383567637613856126}
+  - component: {fileID: 6287415806219346168}
   m_Layer: 0
   m_Name: triangle_pickup
   m_TagString: Untagged
@@ -27,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3401908596721411928}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 9.79, y: 3.17, z: -16.26}
   m_LocalScale: {x: 33.692, y: 35.64, z: 1}
   m_ConstrainProportionsScale: 0
@@ -114,3 +117,56 @@ CapsuleCollider:
   m_Height: 0.15000002
   m_Direction: 1
   m_Center: {x: 0, y: -0.025000004, z: 0}
+--- !u!114 &2075724468113035943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3401908596721411928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87235a2a4205fcc4bae6b8631d61c339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Triangle_pickup
+--- !u!114 &5383567637613856126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3401908596721411928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aaed06c8e421a64cafdb52ddd815b82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Mover
+  randomspeed1: 337.1
+  randomspeed2: 671
+--- !u!54 &6287415806219346168
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3401908596721411928}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

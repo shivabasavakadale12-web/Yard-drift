@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2764543686738093501}
   - component: {fileID: 768052892362071831}
   - component: {fileID: 210416793271926360}
-  - component: {fileID: 6489411234894619775}
   - component: {fileID: 1942862991590469235}
   - component: {fileID: 3278554519537405176}
+  - component: {fileID: 88619242844441867}
   m_Layer: 0
   m_Name: squares
   m_TagString: Enemy
@@ -115,20 +115,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6489411234894619775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5511368885546919844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aaed06c8e421a64cafdb52ddd815b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Mover
-  randomspeed1: 80
-  randomspeed2: 120
 --- !u!54 &1942862991590469235
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -168,3 +154,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deef8b257882f0f49b04674940337b29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Destroy
+--- !u!114 &88619242844441867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5511368885546919844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606b9f2af12f0dd47b7e890e002abbb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAi
+  target: {fileID: 0}
+  speed: 5
