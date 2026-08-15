@@ -140,7 +140,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &3278554519537405176
 MonoBehaviour:
@@ -166,5 +166,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606b9f2af12f0dd47b7e890e002abbb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAi
-  target: {fileID: 0}
-  speed: 5
+  speed: 100

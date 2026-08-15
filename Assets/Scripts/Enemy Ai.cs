@@ -7,21 +7,24 @@ public class EnemyAi : MonoBehaviour
     float random1 = 0f;
     float random2 = 5f;
     float offsetx;
-    float offsety;
+    float offsetZ;
 
     GameObject player;
-
+    Rigidbody rb;
     void Start()
     {
-         player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody>();
         offsetx = Random.Range(random1, random2);
-        offsety = Random.Range(random1, random2);
+        offsetZ = Random.Range(random1, random2);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Vector3 targetPosition = new Vector3(player.transform.position.x + offsetx, player.transform.position.y + offsety, 0f);
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed) * Time.deltaTime;
+        Vector3 targetPosition = new Vector3(player.transform.position.x + offsetx * speed,
+                     player.transform.position.y, player.transform.position.z + offsetZ * speed);
+        Vector3 newposition = Vector3.MoveTowards(rb.position, targetPosition, speed * Time.fixedDeltaTime);
+        rb.MovePosition(newposition);
     }
 
 }
