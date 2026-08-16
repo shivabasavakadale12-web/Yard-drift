@@ -2,29 +2,41 @@ using UnityEngine;
 
 public class EnemyAi : MonoBehaviour
 {
-   [SerializeField] float speed = 5f;
+    enum State { Chasing, Falling }
+    State currentState = State.Chasing;
 
-    float random1 = 0f;
-    float random2 = 5f;
-    float offsetx;
-    float offsetZ;
+    [SerializeField] float acceleration = 10f;
+    [SerializeField] float maxSpeed = 20f;
+
+    float lastframeDistance;
 
     GameObject player;
     Rigidbody rb;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
-        offsetx = Random.Range(random1, random2);
-        offsetZ = Random.Range(random1, random2);
+        rb.useGravity = false;
+        lastframeDistance = Vector3.Distance(transform.position, player.transform.position);
     }
 
     void FixedUpdate()
     {
-        Vector3 targetPosition = new Vector3(player.transform.position.x + offsetx * speed,
-                     player.transform.position.y, player.transform.position.z + offsetZ * speed);
-        Vector3 newposition = Vector3.MoveTowards(rb.position, targetPosition, speed * Time.fixedDeltaTime);
-        rb.MovePosition(newposition);
-    }
+        if (currentState == State.Chasing)
+        {
+            float currentDistance = Vector3.Distance(transform.position, player.transform.position);
+            rb.linearVelocity = Vector3.MoveTowards(rb.linearVelocity, (player.transform.position - transform.position).normalized * maxSpeed,
+                                                    acceleration * Time.fixedDeltaTime);
 
+            if (currentDistance > lastframeDistance)
+            {
+                currentState = State.Falling;
+                rb.useGravity = true;
+            }
+            lastframeDistance = currentDistance;
+            Debug.Log($"{gameObject.name} ({GetInstanceID()}): distance {currentDistance}, state {currentState}");
+        }
+
+    }
 }

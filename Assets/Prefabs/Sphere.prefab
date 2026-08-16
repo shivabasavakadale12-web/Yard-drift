@@ -166,4 +166,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606b9f2af12f0dd47b7e890e002abbb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAi
-  speed: 100
+  acceleration: 50
+  maxSpeed: 80
