@@ -2,7 +2,7 @@
 - Project name: Yard drift
 - Unity version: Unity 6000.3.10f1
 - Active game object:
-  - Name: enemy's
+  - Name: triangle_pickup
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

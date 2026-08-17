@@ -11,7 +11,7 @@ public class Debugcollision : MonoBehaviour
     {
        if(other.gameObject.CompareTag("Enemy"))
        {
-            StartCoroutine(startdeadrotine() );
+          //  StartCoroutine(startdeadrotine() );
        }
     }
 

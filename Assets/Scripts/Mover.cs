@@ -20,7 +20,7 @@ public class Mover : MonoBehaviour
         vector3 = Quaternion.Euler(0, angle, 0) * Vector3.forward;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         rb.linearVelocity = vector3 * speed;
     }

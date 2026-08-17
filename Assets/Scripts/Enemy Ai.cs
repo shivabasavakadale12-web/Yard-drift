@@ -7,11 +7,14 @@ public class EnemyAi : MonoBehaviour
 
     [SerializeField] float acceleration = 10f;
     [SerializeField] float maxSpeed = 20f;
+    [SerializeField] float baselinedistance = 20f;
 
     float lastframeDistance;
 
     GameObject player;
     Rigidbody rb;
+
+    bool hasBeenClose = true;
 
     void Start()
     {
@@ -29,13 +32,18 @@ public class EnemyAi : MonoBehaviour
             rb.linearVelocity = Vector3.MoveTowards(rb.linearVelocity, (player.transform.position - transform.position).normalized * maxSpeed,
                                                     acceleration * Time.fixedDeltaTime);
 
-            if (currentDistance > lastframeDistance)
+          if(currentDistance < baselinedistance)
+            {
+                hasBeenClose = false;
+            }
+
+            if (currentDistance > lastframeDistance && !hasBeenClose)
             {
                 currentState = State.Falling;
                 rb.useGravity = true;
             }
             lastframeDistance = currentDistance;
-            Debug.Log($"{gameObject.name} ({GetInstanceID()}): distance {currentDistance}, state {currentState}");
+          
         }
 
     }
