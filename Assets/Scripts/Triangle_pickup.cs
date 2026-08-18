@@ -3,12 +3,12 @@ using System.Collections;
 public class Triangle_pickup : MonoBehaviour
 {
 
-    int score = 0;
+    int score = 1;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-           StartCoroutine(playercollidedRoutine() );
+            StartCoroutine(playercollidedRoutine() );
            Destroy(gameObject);
         }
         else
@@ -22,8 +22,8 @@ public class Triangle_pickup : MonoBehaviour
     {
         while (true)
         {
+            scoremanager.instance.AddScore(score);  
             Debug.Log("Player picked up the triangle! Total score: " + score);
-            score ++;
             yield break;
         }
     }
