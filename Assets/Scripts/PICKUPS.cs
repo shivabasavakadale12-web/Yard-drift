@@ -8,8 +8,6 @@ public class PICKUPS : MonoBehaviour
 
     float timer = 2.2f;
 
-    float countspawn;
-
      void Start()
     {
         StartCoroutine(PickupspawnRoutine() );
@@ -29,8 +27,6 @@ public class PICKUPS : MonoBehaviour
 
             Vector3 SpawnPosition = new Vector3(xposition, Spawners[randomspawn].position.y, zposition);
             Instantiate(triaglesPrefab, SpawnPosition, Quaternion.Euler(90f, 0f, 0f));
-            countspawn++;
-            Debug.Log(countspawn);
             yield return new WaitForSeconds(timer);
         }
     }

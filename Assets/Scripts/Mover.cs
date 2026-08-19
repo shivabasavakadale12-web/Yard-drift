@@ -12,16 +12,16 @@ public class Mover : MonoBehaviour
     Rigidbody rb;
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        float randomspeed = Random.Range(randomspeed1, randomspeed2);
-        float angle = Random.Range(0f, 360f);
-        speed = randomspeed;
+     //   rb = GetComponent<Rigidbody>();
+      //  float randomspeed = Random.Range(randomspeed1, randomspeed2);
+      //  float angle = Random.Range(0f, 360f);
+       // speed = randomspeed;
 
-        vector3 = Quaternion.Euler(0, angle, 0) * Vector3.forward;
+       // vector3 = Quaternion.Euler(0, angle, 0) * Vector3.forward;
     }
 
     void FixedUpdate()
     {
-        rb.linearVelocity = vector3 * speed;
+       // rb.linearVelocity = vector3 * speed;
     }
 }

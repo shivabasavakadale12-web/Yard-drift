@@ -6,15 +6,18 @@ public class Triangle_pickup : MonoBehaviour
     int score = 1;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Wall"))
         {
-            StartCoroutine(playercollidedRoutine() );
            Destroy(gameObject);
         }
-        else
+        else if (other.gameObject.CompareTag("Player"))
+        
         {
+            StartCoroutine(playercollidedRoutine());
             Destroy(gameObject);
         }
+        
+
 
     }
 
