@@ -9,10 +9,11 @@ public class Debugcollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-       if(other.gameObject.CompareTag("Enemy"))
-       {
-          //  StartCoroutine(startdeadrotine() );
-       }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            //  StartCoroutine(startdeadrotine() );
+        }
+
     }
 
     IEnumerator startdeadrotine()
@@ -21,5 +22,6 @@ public class Debugcollision : MonoBehaviour
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(gamescene);
     }
+
 
 }

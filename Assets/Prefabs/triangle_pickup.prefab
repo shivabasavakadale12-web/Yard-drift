@@ -13,11 +13,10 @@ GameObject:
   - component: {fileID: 5971785367458491051}
   - component: {fileID: 8224303530682668401}
   - component: {fileID: 2075724468113035943}
-  - component: {fileID: 5383567637613856126}
   - component: {fileID: 6287415806219346168}
   m_Layer: 0
   m_Name: triangle_pickup
-  m_TagString: Untagged
+  m_TagString: pickups
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,20 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87235a2a4205fcc4bae6b8631d61c339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Triangle_pickup
---- !u!114 &5383567637613856126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3401908596721411928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aaed06c8e421a64cafdb52ddd815b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Mover
-  randomspeed1: 40
-  randomspeed2: 50
 --- !u!54 &6287415806219346168
 Rigidbody:
   m_ObjectHideFlags: 0

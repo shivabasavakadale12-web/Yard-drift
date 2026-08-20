@@ -6,7 +6,7 @@ public class PICKUPS : MonoBehaviour
     [SerializeField] GameObject triaglesPrefab;
     [SerializeField] Transform[] Spawners;
 
-    float timer = 2.2f;
+    float timer = 1.5f;
 
      void Start()
     {
@@ -22,7 +22,7 @@ public class PICKUPS : MonoBehaviour
 
             BoxCollider zone = Spawners[randomspawn].GetComponent<BoxCollider>();
 
-            float xposition = Random.Range(zone.bounds.min.x, zone.bounds.max.x);
+            float xposition = Random.Range(-120f, 120f);
             float zposition = Random.Range(zone.bounds.min.z, zone.bounds.max.z);
 
             Vector3 SpawnPosition = new Vector3(xposition, Spawners[randomspawn].position.y, zposition);

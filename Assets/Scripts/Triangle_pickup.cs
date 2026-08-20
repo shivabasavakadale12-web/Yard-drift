@@ -26,7 +26,6 @@ public class Triangle_pickup : MonoBehaviour
         while (true)
         {
             scoremanager.instance.AddScore(score);  
-            Debug.Log("Player picked up the triangle! Total score: " + score);
             yield break;
         }
     }
