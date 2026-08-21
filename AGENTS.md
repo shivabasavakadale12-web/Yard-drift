@@ -2,7 +2,7 @@
 - Project name: Yard drift
 - Unity version: Unity 6000.3.10f1
 - Active game object:
-  - Name: Player
-  - Tag: Player
+  - Name: chance manager
+  - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
