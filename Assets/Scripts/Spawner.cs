@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
 
     float timer = 1.5f;
 
+    Quaternion rotation;
+
      void Start()
      {
         StartCoroutine(PickupspawnRoutine() );
@@ -22,13 +24,24 @@ public class Spawner : MonoBehaviour
             int randompickupsNobstacles = Random.Range(0, obstaclesandpickups.Length);
 
 
+            if (randompickupsNobstacles == 2)
+            {
+                rotation = Quaternion.Euler(90f, 0f, 0f);
+            }
+
+            else
+            {
+                rotation = Quaternion.identity;
+            }
+
+
              BoxCollider zone = Spawners[randomspawn].GetComponent<BoxCollider>();
 
             float xposition = Random.Range(-120f, 120f);
             float zposition = Random.Range(zone.bounds.min.z, zone.bounds.max.z);
 
             Vector3 SpawnPosition = new Vector3(xposition, Spawners[randomspawn].position.y, zposition);
-            Instantiate(obstaclesandpickups[randompickupsNobstacles], SpawnPosition, Quaternion.Euler(90f, 0f, 0f));
+            Instantiate(obstaclesandpickups[randompickupsNobstacles], SpawnPosition, rotation);
             yield return new WaitForSeconds(timer);
         }
     }
