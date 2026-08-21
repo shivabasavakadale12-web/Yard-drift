@@ -265,6 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 76525745}
+  - component: {fileID: 76525746}
   m_Layer: 0
   m_Name: spawner
   m_TagString: Untagged
@@ -288,6 +289,23 @@ Transform:
   - {fileID: 404172633}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &76525746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76525744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e837a7c2a904249976dcb3e164ed1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  enemys:
+  - {fileID: 2623283769961443344, guid: 2875043cf50d751468237c03226a4bc9, type: 3}
+  - {fileID: 5511368885546919844, guid: d9db8a7b243f656489fa8a5aed6de2b4, type: 3}
+  spawns:
+  - {fileID: 404172633}
 --- !u!1 &98549816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2076,10 +2094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a15d95dc811f4948952c8e33ffe0770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  obstaclesandpickups:
-  - {fileID: 2623283769961443344, guid: 2875043cf50d751468237c03226a4bc9, type: 3}
-  - {fileID: 5511368885546919844, guid: d9db8a7b243f656489fa8a5aed6de2b4, type: 3}
-  - {fileID: 3401908596721411928, guid: ff2820f32c90c624d84e891a491e568a, type: 3}
+  triaglesPrefab: {fileID: 3401908596721411928, guid: ff2820f32c90c624d84e891a491e568a, type: 3}
   Spawners:
   - {fileID: 404172633}
 --- !u!1 &1074492214
