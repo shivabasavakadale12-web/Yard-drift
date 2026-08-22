@@ -8,6 +8,7 @@ public class scoremanager : MonoBehaviour
     [SerializeField] TMP_Text scoretext;
     [SerializeField] TMP_Text targettext;
     [SerializeField] GameObject winpanel;
+    [SerializeField] LevelData leveldata;
 
     public static scoremanager instance;
 
@@ -18,7 +19,7 @@ public class scoremanager : MonoBehaviour
     {
         winpanel.SetActive(false);
         Time.timeScale = 1f;
-        target = 10;
+        target = leveldata.targetTriangles;
         instance = this;
         targettext.text = target.ToString("00");
     }

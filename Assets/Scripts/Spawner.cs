@@ -6,13 +6,17 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] GameObject[] obstaclesandpickups;
     [SerializeField] Transform[] Spawners;
+    [SerializeField] LevelData leveldata;
 
-    float timer = 1.5f;
+    float timer;
 
     Quaternion rotation;
 
+
+
      void Start()
      {
+        timer = leveldata.spawnInterval;
         StartCoroutine(PickupspawnRoutine() );
      }
 

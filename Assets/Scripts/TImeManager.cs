@@ -1,12 +1,21 @@
 using TMPro;
 using UnityEngine;
 
-public class Levelmanager : MonoBehaviour
+public class TImeManager : MonoBehaviour
 {
 
     [SerializeField] TMP_Text timetext;
-    float time = 60;
-   
+    [SerializeField] LevelData leveldata;
+
+    float time;
+
+     void Start()
+    {
+        time = leveldata.timeLimit;
+
+        Debug.Log("LevelData reference: " + leveldata);
+        Debug.Log("Level time: " + leveldata.timeLimit);
+    }
 
     void Update()
     {
