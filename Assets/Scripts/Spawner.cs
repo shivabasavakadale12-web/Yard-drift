@@ -12,12 +12,10 @@ public class Spawner : MonoBehaviour
 
     Quaternion rotation;
 
-
-
      void Start()
      {
         timer = leveldata.spawnInterval;
-        StartCoroutine(PickupspawnRoutine() );
+        StartCoroutine(PickupspawnRoutine());
      }
 
     IEnumerator PickupspawnRoutine()
@@ -25,7 +23,19 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             int randomspawn = Random.Range(0, Spawners.Length);
-            int randompickupsNobstacles = Random.Range(0, obstaclesandpickups.Length);
+            float randomchance = Random.Range(0f, 100f);
+
+            int randompickupsNobstacles;
+
+            if (randomchance > leveldata.triangleSpawnChance)
+            {
+                randompickupsNobstacles = 2;
+            }
+
+            else
+            {
+                randompickupsNobstacles = Random.Range(0, 2);
+            }
 
 
             if (randompickupsNobstacles == 2)
@@ -39,7 +49,7 @@ public class Spawner : MonoBehaviour
             }
 
 
-             BoxCollider zone = Spawners[randomspawn].GetComponent<BoxCollider>();
+            BoxCollider zone = Spawners[randomspawn].GetComponent<BoxCollider>();
 
             float xposition = Random.Range(-120f, 120f);
             float zposition = Random.Range(zone.bounds.min.z, zone.bounds.max.z);

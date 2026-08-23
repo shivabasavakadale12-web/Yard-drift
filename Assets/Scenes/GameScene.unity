@@ -2045,7 +2045,7 @@ GameObject:
   - component: {fileID: 1067250647}
   - component: {fileID: 1067250648}
   m_Layer: 0
-  m_Name: pickups
+  m_Name: spawn manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4199,9 +4199,9 @@ SceneRoots:
   - {fileID: 1233893589}
   - {fileID: 684974064}
   - {fileID: 76525745}
-  - {fileID: 1067250647}
   - {fileID: 862311481}
   - {fileID: 156897251}
   - {fileID: 2035377466}
   - {fileID: 1679861996}
   - {fileID: 1066827358}
+  - {fileID: 1067250647}
