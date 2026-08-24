@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
 
             int randompickupsNobstacles;
 
-            if (randomchance > leveldata.triangleSpawnChance)
+            if (randomchance < leveldata.triangleSpawnChance)
             {
                 randompickupsNobstacles = 2;
             }
