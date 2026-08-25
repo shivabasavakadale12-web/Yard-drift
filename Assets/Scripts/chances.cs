@@ -6,7 +6,7 @@ public class chances : MonoBehaviour
 {
     [SerializeField] TMP_Text chanceText;
     [SerializeField] TMP_Text obstaclehitText;
-    [SerializeField] LevelData levelData;
+    [SerializeField] Levelmanager levelmanager;
 
     public GameObject Player;
 
@@ -20,8 +20,8 @@ public class chances : MonoBehaviour
 
      void Awake()
     {
-        chance = levelData.maxHits;
-       chanceText.text = chance.ToString("00");
+        chance = levelmanager.CurrentLevelData.maxHits;
+        chanceText.text = chance.ToString("00");
         instance = this;
     }
 

@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] GameObject[] obstaclesandpickups;
     [SerializeField] Transform[] Spawners;
-    [SerializeField] LevelData leveldata;
+    [SerializeField] Levelmanager levelmanager;
 
     float timer;
 
@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
 
      void Start()
      {
-        timer = leveldata.spawnInterval;
+        timer = levelmanager.CurrentLevelData.spawnInterval;
         StartCoroutine(PickupspawnRoutine());
      }
 
@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
 
             int randompickupsNobstacles;
 
-            if (randomchance < leveldata.triangleSpawnChance)
+            if (randomchance < levelmanager.CurrentLevelData.triangleSpawnChance)
             {
                 randompickupsNobstacles = 2;
             }

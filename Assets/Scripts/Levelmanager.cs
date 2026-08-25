@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UIElements;
 
 public class Levelmanager : MonoBehaviour
 {
@@ -9,9 +8,11 @@ public class Levelmanager : MonoBehaviour
 
     int currentlevelIndex = 0;
 
+    public LevelData CurrentLevelData => levels[currentlevelIndex];
+
      void Start()
     {
-        leveltext.text = levels[currentlevelIndex].levelNumber.ToString();
+        leveltext.text = CurrentLevelData.levelNumber.ToString();
     }
 
 }

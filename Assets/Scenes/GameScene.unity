@@ -1752,7 +1752,7 @@ MonoBehaviour:
   scoretext: {fileID: 1508801250}
   targettext: {fileID: 47161884}
   winpanel: {fileID: 1074492214}
-  leveldata: {fileID: 11400000, guid: 8384cdcb20a7f4a49b4e7c0d7eeb985f, type: 2}
+  levelmanager: {fileID: 817490588}
 --- !u!4 &926885417 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3741085472364608321, guid: 306de3fc473d02549911d60913dbaf2f, type: 3}
@@ -2089,7 +2089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   timetext: {fileID: 2130861713}
-  leveldata: {fileID: 11400000, guid: 8384cdcb20a7f4a49b4e7c0d7eeb985f, type: 2}
+  levelmanager: {fileID: 817490588}
 --- !u!1 &1067250646
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,7 +2140,7 @@ MonoBehaviour:
   - {fileID: 3401908596721411928, guid: ff2820f32c90c624d84e891a491e568a, type: 3}
   Spawners:
   - {fileID: 404172633}
-  leveldata: {fileID: 11400000, guid: 8384cdcb20a7f4a49b4e7c0d7eeb985f, type: 2}
+  levelmanager: {fileID: 817490588}
 --- !u!1 &1074492214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,7 +3364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   chanceText: {fileID: 294736339}
   obstaclehitText: {fileID: 720814485}
-  levelData: {fileID: 11400000, guid: 8384cdcb20a7f4a49b4e7c0d7eeb985f, type: 2}
+  levelmanager: {fileID: 817490588}
   Player: {fileID: 1314167909}
 --- !u!1 &1899294689
 GameObject:

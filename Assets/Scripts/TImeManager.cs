@@ -5,16 +5,13 @@ public class TImeManager : MonoBehaviour
 {
 
     [SerializeField] TMP_Text timetext;
-    [SerializeField] LevelData leveldata;
+    [SerializeField] Levelmanager levelmanager;
 
     float time;
 
      void Start()
     {
-        time = leveldata.timeLimit;
-
-        Debug.Log("LevelData reference: " + leveldata);
-        Debug.Log("Level time: " + leveldata.timeLimit);
+        time = levelmanager.CurrentLevelData.timeLimit;
     }
 
     void Update()
