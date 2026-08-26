@@ -19,29 +19,30 @@ public class scoremanager : MonoBehaviour
     {
         winpanel.SetActive(false);
         Time.timeScale = 1f;
-        target = levelmanager.CurrentLevelData.targetTriangles;
         instance = this;
-        targettext.text = target.ToString("00");
     }
 
-    private void Update()
+     void Start()
     {
-        WinSequence();
+       target = levelmanager.CurrentLevelData.targetTriangles; 
+       targettext.text = target.ToString("00");
     }
 
     public void AddScore(int amount)
     {
         score += amount;
         scoretext.text = score.ToString("00");
+
+        if (score == target)
+        {
+            WinSequence();
+        }
     }
 
     public void WinSequence()
-    {
-        if (score == target)
-        {
-            winpanel.SetActive(true);
-            Debug.Log("You Win!");
-            Time.timeScale = 0f;
-        }
+    {   
+     winpanel.SetActive(true);
+     Debug.Log("You Win!");
+     Time.timeScale = 0f;   
     }
 }

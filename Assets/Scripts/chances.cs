@@ -20,15 +20,20 @@ public class chances : MonoBehaviour
 
      void Awake()
     {
-        chance = levelmanager.CurrentLevelData.maxHits;
-        chanceText.text = chance.ToString("00");
         instance = this;
     }
 
+     void Start()
+    {
+      chance = levelmanager.CurrentLevelData.maxHits;    
+      chanceText.text = chance.ToString("00");
+    }
     public void playerhit(int amount)
     {
         playerhitobstacle += amount;
         obstaclehitText.text = playerhitobstacle.ToString("00");
+
+
 
         if (playerhitobstacle == chance)
         {
