@@ -22,6 +22,7 @@ public class TImeManager : MonoBehaviour
 
         if (time <= 0 )
         {
+
             Debug.Log("game over mate!");
         }
     }

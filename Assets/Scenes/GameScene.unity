@@ -3262,7 +3262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Replay
+  m_text: Retry
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81ef23f5cf2c8a743956f4e715333072, type: 2}
   m_sharedMaterial: {fileID: -7487905920587984862, guid: 81ef23f5cf2c8a743956f4e715333072, type: 2}
@@ -3424,7 +3424,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1287362652}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 817490588}
+        m_TargetAssemblyTypeName: Levelmanager, Assembly-CSharp
+        m_MethodName: restartgame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1287362652
 MonoBehaviour:
   m_ObjectHideFlags: 0

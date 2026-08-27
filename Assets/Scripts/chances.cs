@@ -28,11 +28,11 @@ public class chances : MonoBehaviour
       chance = levelmanager.CurrentLevelData.maxHits;    
       chanceText.text = chance.ToString("00");
     }
+
     public void playerhit(int amount)
     {
         playerhitobstacle += amount;
         obstaclehitText.text = playerhitobstacle.ToString("00");
-
 
 
         if (playerhitobstacle == chance)

@@ -18,16 +18,33 @@ public class Levelmanager : MonoBehaviour
      void Start()
     {
         currentlevelIndex = PlayerPrefs.GetInt("CurrentLevel", 0);
+        Debug.Log("SAVED LEVEL INDEX = " + currentlevelIndex);
+
         leveltext.text = CurrentLevelData.levelNumber.ToString("00");
     }
 
     public void nextlevel()
     {
-        currentleveltext.text = CurrentLevelData.levelNumber.ToString("00");
+        currentleveltext.text = leveltext.text;
         winpanel.SetActive(false);
         currentlevelIndex++;
         PlayerPrefs.SetInt("CurrentLevel", currentlevelIndex);
         PlayerPrefs.Save();
+
+        if (currentlevelIndex >= levels.Length)
+        {
+            currentlevelIndex = 0;
+            PlayerPrefs.SetInt("CurrentLevel", currentlevelIndex);
+            PlayerPrefs.Save();
+            // won whole game logic and then its done 
+        }
+        SceneManager.LoadScene(currentscene);
+        
+    }
+
+    public void restartgame()
+    {
+        winpanel.SetActive(false);
         SceneManager.LoadScene(currentscene);
     }
 }
