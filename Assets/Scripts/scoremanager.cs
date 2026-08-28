@@ -9,6 +9,7 @@ public class scoremanager : MonoBehaviour
     [SerializeField] TMP_Text targettext;
     [SerializeField] GameObject winpanel;
     [SerializeField] Levelmanager levelmanager;
+    [SerializeField] TImeManager timemanager;
 
     public static scoremanager instance;
 
@@ -30,6 +31,7 @@ public class scoremanager : MonoBehaviour
 
     public void AddScore(int amount)
     {
+       
         score += amount;
         scoretext.text = score.ToString("00");
 
@@ -41,6 +43,7 @@ public class scoremanager : MonoBehaviour
 
     public void WinSequence()
     {   
+
      winpanel.SetActive(true);
      Debug.Log("You Win!");
      Time.timeScale = 0f;   

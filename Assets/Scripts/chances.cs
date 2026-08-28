@@ -6,11 +6,13 @@ public class chances : MonoBehaviour
 {
     [SerializeField] TMP_Text chanceText;
     [SerializeField] TMP_Text obstaclehitText;
+    [SerializeField] TMP_Text finalobstaclehits;
     [SerializeField] Levelmanager levelmanager;
+    [SerializeField] GameObject lostpanel;
 
     public GameObject Player;
 
-    int chance;
+   public int chance;
     int playerhitobstacle = 0;
 
 
@@ -21,6 +23,7 @@ public class chances : MonoBehaviour
      void Awake()
     {
         instance = this;
+        lostpanel.SetActive(false);
     }
 
      void Start()
@@ -34,6 +37,7 @@ public class chances : MonoBehaviour
         playerhitobstacle += amount;
         obstaclehitText.text = playerhitobstacle.ToString("00");
 
+        finalobstaclehits.text = obstaclehitText.text;
 
         if (playerhitobstacle == chance)
         {
@@ -45,7 +49,6 @@ public class chances : MonoBehaviour
 
      void playerdeath()
     {
-        SceneManager.LoadScene(gamescene);
-        Debug.Log("Game Over");
+        lostpanel.SetActive(true);
     }
 }
