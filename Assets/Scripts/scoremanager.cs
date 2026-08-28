@@ -9,7 +9,9 @@ public class scoremanager : MonoBehaviour
     [SerializeField] TMP_Text targettext;
     [SerializeField] GameObject winpanel;
     [SerializeField] Levelmanager levelmanager;
-    [SerializeField] TImeManager timemanager;
+    [SerializeField] TimeManager timemanager;
+
+    [SerializeField] Rewardsystem rewardsystem;
 
     public static scoremanager instance;
 
@@ -42,8 +44,8 @@ public class scoremanager : MonoBehaviour
     }
 
     public void WinSequence()
-    {   
-
+    {
+     rewardsystem.SaveLevelTime();
      winpanel.SetActive(true);
      Debug.Log("You Win!");
      Time.timeScale = 0f;   

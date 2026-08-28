@@ -2714,6 +2714,7 @@ MonoBehaviour:
   winpanel: {fileID: 1074492214}
   levelmanager: {fileID: 817490588}
   timemanager: {fileID: 1066827359}
+  rewardsystem: {fileID: 1974519039}
 --- !u!4 &926885417 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3741085472364608321, guid: 306de3fc473d02549911d60913dbaf2f, type: 3}
@@ -3439,8 +3440,8 @@ MonoBehaviour:
   timetext: {fileID: 2130861713}
   timeconsumedtext: {fileID: 1793573959}
   levelmanager: {fileID: 817490588}
+  lostpanel: {fileID: 976557043}
   time: 0
-  timeconsumed: 0
 --- !u!1 &1067250646
 GameObject:
   m_ObjectHideFlags: 0
@@ -5435,7 +5436,7 @@ MonoBehaviour:
   obstaclehitText: {fileID: 720814485}
   finalobstaclehits: {fileID: 1355336978}
   levelmanager: {fileID: 817490588}
-  lostpanel: {fileID: 0}
+  lostpanel: {fileID: 976557043}
   Player: {fileID: 1314167909}
   chance: 0
 --- !u!1 &1685709510
