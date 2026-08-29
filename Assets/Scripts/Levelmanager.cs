@@ -12,6 +12,8 @@ public class Levelmanager : MonoBehaviour
     int currentlevelIndex = 0;
 
     const string currentscene = "GameScene";
+    const string HighestUnlockedLevelKey = "HighestUnlockedLevel";
+
 
     public LevelData CurrentLevelData => levels[currentlevelIndex];
 
@@ -36,11 +38,11 @@ public class Levelmanager : MonoBehaviour
         PlayerPrefs.SetInt("CurrentLevel", currentlevelIndex);
 
           int highestUnlockedLevel =
-            PlayerPrefs.GetInt("HighestUnlockedLevel", 0);
+            PlayerPrefs.GetInt(HighestUnlockedLevelKey, 0);
 
         if (currentlevelIndex > highestUnlockedLevel)
         {
-            PlayerPrefs.SetInt("HighestUnlockedLevel", currentlevelIndex);
+            PlayerPrefs.SetInt(HighestUnlockedLevelKey, currentlevelIndex);
         }
 
         if (currentlevelIndex >= levels.Length)
