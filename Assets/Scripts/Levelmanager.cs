@@ -30,19 +30,28 @@ public class Levelmanager : MonoBehaviour
     public void nextlevel()
     {
         winpanel.SetActive(false);
+
         currentlevelIndex++;
+
         PlayerPrefs.SetInt("CurrentLevel", currentlevelIndex);
-        PlayerPrefs.Save();
+
+          int highestUnlockedLevel =
+            PlayerPrefs.GetInt("HighestUnlockedLevel", 0);
+
+        if (currentlevelIndex > highestUnlockedLevel)
+        {
+            PlayerPrefs.SetInt("HighestUnlockedLevel", currentlevelIndex);
+        }
 
         if (currentlevelIndex >= levels.Length)
         {
             currentlevelIndex = 0;
             PlayerPrefs.SetInt("CurrentLevel", currentlevelIndex);
-            PlayerPrefs.Save();
-     
         }
+
+        PlayerPrefs.Save();
+
         SceneManager.LoadScene(currentscene);
-        
     }
 
     public void restartgame()

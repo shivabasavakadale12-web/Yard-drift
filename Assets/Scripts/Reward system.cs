@@ -35,7 +35,7 @@ public class Rewardsystem : MonoBehaviour
 
         PlayerPrefs.SetFloat(TotalTimeKey, totaltimetaken);
         PlayerPrefs.Save();
-        Debug.Log("total number is: " + totaltimetaken);
+        Debug.Log("total time taken is: " + totaltimetaken);
     }
 
     public void checktimereward()
