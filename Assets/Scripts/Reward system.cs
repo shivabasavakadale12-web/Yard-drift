@@ -4,13 +4,19 @@ public class Rewardsystem : MonoBehaviour
 {
    [SerializeField] TimeManager timemanger;
    [SerializeField] chances chancemanager;
+   [SerializeField] GameObject timereward;
 
     const string TotalTimeKey = "TotalTimeTaken";
 
     float totaltimetaken;
+
+    void Awake()
+    {
+        timereward.SetActive(false);
+    }
     public void increasetime()
     {
-        timemanger.time += 10; 
+        timemanger.time += 15; 
     }
 
     public void increasechance()
@@ -20,7 +26,7 @@ public class Rewardsystem : MonoBehaviour
 
      void Start()
      {      
-      totaltimetaken = PlayerPrefs.GetFloat(TotalTimeKey, totaltimetaken);
+      totaltimetaken = PlayerPrefs.GetFloat(TotalTimeKey, 0f);
      }
 
     public void SaveLevelTime()
@@ -29,5 +35,16 @@ public class Rewardsystem : MonoBehaviour
 
         PlayerPrefs.SetFloat(TotalTimeKey, totaltimetaken);
         PlayerPrefs.Save();
+        Debug.Log("total number is: " + totaltimetaken);
+    }
+
+    public void checktimereward()
+    {
+        totaltimetaken = PlayerPrefs.GetFloat(TotalTimeKey, 0f);
+
+        if (totaltimetaken >= 100)
+        {
+            timereward.SetActive(true);
+        }
     }
 }

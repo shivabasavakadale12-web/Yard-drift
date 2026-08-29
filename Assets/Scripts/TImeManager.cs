@@ -9,7 +9,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] TMP_Text timetext;
     [SerializeField] TMP_Text timeconsumedtext;
     [SerializeField] Levelmanager levelmanager;
-    [SerializeField] GameObject lostpanel;
+    [SerializeField] deathManager deathmanager;
 
     public float time;
 
@@ -31,8 +31,7 @@ public class TimeManager : MonoBehaviour
 
         if (time <= 0 )
         {
-           
-            lostpanel.SetActive(true);
+            deathmanager.deadthseq();   
         }
     }
 }

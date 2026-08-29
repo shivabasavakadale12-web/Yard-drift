@@ -8,7 +8,7 @@ public class chances : MonoBehaviour
     [SerializeField] TMP_Text obstaclehitText;
     [SerializeField] TMP_Text finalobstaclehits;
     [SerializeField] Levelmanager levelmanager;
-    [SerializeField] GameObject lostpanel;
+    [SerializeField] deathManager deathmanager;
 
     public GameObject Player;
 
@@ -23,7 +23,6 @@ public class chances : MonoBehaviour
      void Awake()
     {
         instance = this;
-        lostpanel.SetActive(false);
     }
 
      void Start()
@@ -47,8 +46,8 @@ public class chances : MonoBehaviour
         }
     }
 
-     void playerdeath()
+    public void playerdeath()
     {
-        lostpanel.SetActive(true);
+      deathmanager.deadthseq();
     }
 }

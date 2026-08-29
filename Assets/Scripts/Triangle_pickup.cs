@@ -16,8 +16,6 @@ public class Triangle_pickup : MonoBehaviour
             StartCoroutine(playercollidedRoutine());
             Destroy(gameObject);
         }
-        
-
 
     }
 
