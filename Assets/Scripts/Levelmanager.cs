@@ -16,11 +16,7 @@ public class Levelmanager : MonoBehaviour
 
 
     public LevelData CurrentLevelData => levels[currentlevelIndex];
-
-    public void Awake()
-    {
-        currentlevelIndex = PlayerPrefs.GetInt("CurrentLevel", 0);
-    }
+    public LevelData lastleveldata => levels[levels.Length - 1];
 
     void Start()
     {
@@ -33,6 +29,9 @@ public class Levelmanager : MonoBehaviour
     {
         winpanel.SetActive(false);
 
+
+        if (currentlevelIndex == levels.Length - 1) return;
+    
         currentlevelIndex++;
 
         PlayerPrefs.SetInt("CurrentLevel", currentlevelIndex);
@@ -44,13 +43,6 @@ public class Levelmanager : MonoBehaviour
         {
             PlayerPrefs.SetInt(HighestUnlockedLevelKey, currentlevelIndex);
         }
-
-        if (currentlevelIndex >= levels.Length)
-        {
-            currentlevelIndex = 0;
-            PlayerPrefs.SetInt("CurrentLevel", currentlevelIndex);
-        }
-
         PlayerPrefs.Save();
 
         SceneManager.LoadScene(currentscene);

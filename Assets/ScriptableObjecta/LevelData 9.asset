@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   levelNumber: 9
   timeLimit: 60
-  targetTriangles: 3
-  maxHits: 8
+  targetTriangles: 8
+  maxHits: 3
   triangleSpawnChance: 50
   obstacleSpawnChance: 50
   spawnInterval: 1

@@ -1,20 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Rewardsystem : MonoBehaviour
 {
     [SerializeField] TimeManager timemanger;
     [SerializeField] chances chanceManager;
-    [SerializeField] chances chancemanager;
-    [SerializeField] GameObject timereward;
-    [SerializeField] GameObject chancereward;
     [SerializeField] GameObject lostpanel;
     [SerializeField] deathManager deathmanager;
 
+    [SerializeField] Button chancerewardbutton;
+    [SerializeField] Button timerewardbutton;
+
     public GameObject player;
 
-    bool istimerewardused;
-    bool ischancerewardused;
+    bool rewardused;
+
 
     const string TotalTimeKey = "TotalTimeTaken";
     const string totalcheancekey = "TotalChanceTaken";
@@ -22,35 +23,39 @@ public class Rewardsystem : MonoBehaviour
     float totaltimetaken;
     int totalchancetaken;
 
-    void Awake()
-    {
-        timereward.SetActive(false);
-        chancereward.SetActive(false);
-    }
-
     public void increasetime()
     {
-        istimerewardused = true;
+        rewardused = true;
         timemanger.time += 15;
         lostpanel.SetActive(false);
+        timerewardbutton.interactable = false;
+        chancerewardbutton.interactable = false;
         deathmanager.continueafterreward();
         Time.timeScale = 1f;
     }
 
     public void increasechance()
     {
-        ischancerewardused = true;
-        chancemanager.chance += 2;
+        rewardused = true;
+        chanceManager.chance += 2;
         lostpanel.SetActive(false);
-        deathmanager.continueafterreward();
+        timerewardbutton.interactable = false;
+        chancerewardbutton.interactable = false;
         player.GetComponent<MeshRenderer>().enabled = true;
+        player.GetComponent<Collider>().enabled = true;
+        deathmanager.continueafterreward();
         Time.timeScale = 1f;
+
     }
 
     void Start()
      {    
-       ischancerewardused = false;
-       istimerewardused = false;
+       rewardused = false;
+
+       timerewardbutton.interactable = false;
+       chancerewardbutton.interactable = false;
+
+
        totaltimetaken = PlayerPrefs.GetFloat(TotalTimeKey, 0f);
        totalchancetaken = PlayerPrefs.GetInt(totalcheancekey, 0);
     }
@@ -68,9 +73,9 @@ public class Rewardsystem : MonoBehaviour
     {
         totaltimetaken = PlayerPrefs.GetFloat(TotalTimeKey, 0f);
         Debug.Log("chance taken = " + totalchancetaken);
-        if (totaltimetaken >= 100 && !istimerewardused)
+        if (totaltimetaken >= 100 && !rewardused)
         {
-            timereward.SetActive(true);
+            timerewardbutton.interactable = true;
         }
     }
 
@@ -86,9 +91,10 @@ public class Rewardsystem : MonoBehaviour
     {
         totalchancetaken = PlayerPrefs.GetInt(totalcheancekey, 0);
 
-        if (totalchancetaken >= 8 && !ischancerewardused)
+        if (totalchancetaken >= 8 && !rewardused)
         {
-            chancereward.SetActive(true);
+            
+            chancerewardbutton.interactable = true;
         }
 
     }

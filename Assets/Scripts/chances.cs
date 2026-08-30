@@ -44,7 +44,8 @@ public class chances : MonoBehaviour
         if (chance <= 0)
         {
             Player.GetComponent<MeshRenderer>().enabled = false;
-            Invoke("playerdeath", 3f);
+            Player.GetComponent<Collider>().enabled = false;
+            playerdeath();
 
         }
     }

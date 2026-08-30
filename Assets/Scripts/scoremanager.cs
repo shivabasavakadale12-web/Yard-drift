@@ -8,6 +8,7 @@ public class scoremanager : MonoBehaviour
     [SerializeField] TMP_Text scoretext;
     [SerializeField] TMP_Text targettext;
     [SerializeField] GameObject winpanel;
+    [SerializeField] GameObject Winalllevelpanel;
     [SerializeField] Levelmanager levelmanager;
     [SerializeField] TimeManager timemanager;
 
@@ -21,6 +22,7 @@ public class scoremanager : MonoBehaviour
     private void Awake()
     {
         winpanel.SetActive(false);
+        Winalllevelpanel.SetActive(false);
         Time.timeScale = 1f;
         instance = this;
     }
@@ -47,8 +49,18 @@ public class scoremanager : MonoBehaviour
     {
      rewardsystem.SaveLevelTime();
      rewardsystem.savelevelchance();
-     winpanel.SetActive(true);
-     Debug.Log("You Win!");
+
+        if (levelmanager.CurrentLevelData == levelmanager.lastleveldata)
+        {
+            winpanel.SetActive(false);
+            Winalllevelpanel.SetActive(true);
+        }
+
+        else
+        {
+          winpanel.SetActive(true);
+        }
+
      Time.timeScale = 0f;   
     }
 }
