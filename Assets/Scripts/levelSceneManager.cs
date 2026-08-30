@@ -24,7 +24,6 @@ public class levelSceneManager : MonoBehaviour
 
             button.interactable = unlocked;
 
-
             lockedbuttons[i].SetActive(!unlocked);
         }
     }

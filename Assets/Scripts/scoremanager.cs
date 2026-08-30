@@ -46,6 +46,7 @@ public class scoremanager : MonoBehaviour
     public void WinSequence()
     {
      rewardsystem.SaveLevelTime();
+     rewardsystem.savelevelchance();
      winpanel.SetActive(true);
      Debug.Log("You Win!");
      Time.timeScale = 0f;   

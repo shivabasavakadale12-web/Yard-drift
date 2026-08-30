@@ -10,9 +10,10 @@ public class chances : MonoBehaviour
     [SerializeField] Levelmanager levelmanager;
     [SerializeField] deathManager deathmanager;
 
-    public GameObject Player;
-
+   public GameObject Player;
    public int chance;
+   public int chancetaken => levelmanager.CurrentLevelData.maxHits - chance;
+
     int playerhitobstacle = 0;
 
 
@@ -34,11 +35,13 @@ public class chances : MonoBehaviour
     public void playerhit(int amount)
     {
         playerhitobstacle += amount;
+        chance -= amount;
+
         obstaclehitText.text = playerhitobstacle.ToString("00");
-
         finalobstaclehits.text = obstaclehitText.text;
+        chanceText.text = chance.ToString("00");
 
-        if (playerhitobstacle == chance)
+        if (chance <= 0)
         {
             Player.GetComponent<MeshRenderer>().enabled = false;
             Invoke("playerdeath", 3f);

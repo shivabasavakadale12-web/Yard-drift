@@ -25,6 +25,9 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
+        if (deathmanager.isdead) return;
+
+
         time -= Time.deltaTime;
         timetext.text = Mathf.CeilToInt(time).ToString();
         timeconsumedtext.text = timetaken.ToString("00");

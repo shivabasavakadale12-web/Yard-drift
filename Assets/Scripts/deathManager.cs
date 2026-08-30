@@ -20,8 +20,17 @@ public class deathManager : MonoBehaviour
 
         lostpanel.SetActive(true);
 
+        rewardsystem.savelevelchance();
+        rewardsystem.SaveLevelTime();
+
         rewardsystem.checktimereward();
+        rewardsystem.checkchancereward();
 
         Time.timeScale = 0f;
+    }
+
+    public void continueafterreward()
+    {
+        isdead = false;
     }
 }
