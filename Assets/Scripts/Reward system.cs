@@ -72,11 +72,10 @@ public class Rewardsystem : MonoBehaviour
     public void checktimereward()
     {
         totaltimetaken = PlayerPrefs.GetFloat(TotalTimeKey, 0f);
-        Debug.Log("chance taken = " + totalchancetaken);
         if (totaltimetaken >= 100 && !rewardused)
         {
             timerewardbutton.interactable = true;
-        }
+       }
     }
 
     public void savelevelchance()

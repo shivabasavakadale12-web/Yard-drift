@@ -1151,7 +1151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -153.21217, y: 26.268087, z: -140.74232}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2641,7 +2641,6 @@ GameObject:
   - component: {fileID: 707571338}
   - component: {fileID: 707571337}
   - component: {fileID: 707571340}
-  - component: {fileID: 707571339}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -2700,26 +2699,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707571334}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -153.21217, y: 26.268087, z: -140.74232}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1605503014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &707571339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707571334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4afa82ae3200b82408d605c3dbdd1e38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineRotateWithFollowTarget
-  Damping: 0.76
 --- !u!114 &707571340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8165,6 +8151,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 98549817}
     m_Modifications:
+    - target: {fileID: 2659161344548581088, guid: 306de3fc473d02549911d60913dbaf2f, type: 3}
+      propertyPath: turnspeed
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659161344548581088, guid: 306de3fc473d02549911d60913dbaf2f, type: 3}
+      propertyPath: playerboost
+      value: 
+      objectReference: {fileID: 8953916650961993959}
+    - target: {fileID: 2659161344548581088, guid: 306de3fc473d02549911d60913dbaf2f, type: 3}
+      propertyPath: maxTiltAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659161344548581088, guid: 306de3fc473d02549911d60913dbaf2f, type: 3}
+      propertyPath: maxTurnAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073401046573200211, guid: 306de3fc473d02549911d60913dbaf2f, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073401046573200211, guid: 306de3fc473d02549911d60913dbaf2f, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].probability
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3335631324833541467, guid: 306de3fc473d02549911d60913dbaf2f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -8209,6 +8219,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4815540921301894557, guid: 306de3fc473d02549911d60913dbaf2f, type: 3}
+      propertyPath: m_Name
+      value: boost particle
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6399088835967123449, guid: 306de3fc473d02549911d60913dbaf2f, type: 3}
     m_RemovedGameObjects: []
@@ -8218,6 +8232,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1314167918}
   m_SourcePrefab: {fileID: 100100000, guid: 306de3fc473d02549911d60913dbaf2f, type: 3}
+--- !u!198 &8953916650961993959 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3073401046573200211, guid: 306de3fc473d02549911d60913dbaf2f, type: 3}
+  m_PrefabInstance: {fileID: 8953916650961993958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
