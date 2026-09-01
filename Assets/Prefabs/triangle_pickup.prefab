@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Triangle_pickup
   particleeffect: {fileID: 8740975676516857828, guid: 642fe10a371a4414b8b074d84af6075c, type: 3}
+  pickupSound: {fileID: 8300000, guid: be2949111faf2584d949b9cd571bee32, type: 3}
 --- !u!54 &6287415806219346168
 Rigidbody:
   m_ObjectHideFlags: 0

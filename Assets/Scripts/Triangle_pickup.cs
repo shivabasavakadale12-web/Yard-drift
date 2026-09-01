@@ -3,7 +3,7 @@ using System.Collections;
 public class Triangle_pickup : MonoBehaviour
 {
     [SerializeField] GameObject particleeffect;
-
+    [SerializeField] AudioClip pickupSound;
     int score = 1;
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +15,7 @@ public class Triangle_pickup : MonoBehaviour
         
         {
             Instantiate(particleeffect, transform.position, Quaternion.identity);
+            AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position);
             StartCoroutine(playercollidedRoutine());
             Destroy(gameObject);
         }

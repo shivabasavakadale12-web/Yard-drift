@@ -10,6 +10,7 @@ public class chances : MonoBehaviour
     [SerializeField] TMP_Text finalobstaclehits;
     [SerializeField] Levelmanager levelmanager;
     [SerializeField] deathManager deathmanager;
+    [SerializeField] AudioClip playerdeathsound;
     [SerializeField] float delay = 1f;
 
     public GameObject Player;
@@ -45,6 +46,7 @@ public class chances : MonoBehaviour
 
         if (chance <= 0)
         {
+            AudioSource.PlayClipAtPoint(playerdeathsound, Camera.main.transform.position);
             Player.GetComponent<MeshRenderer>().enabled = false;
             Player.GetComponent<Collider>().enabled = false;
            StartCoroutine(playerdeath());
@@ -54,7 +56,7 @@ public class chances : MonoBehaviour
 
     public IEnumerator playerdeath()
     {
-      yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(delay);
       deathmanager.deadthseq();
     }
 }

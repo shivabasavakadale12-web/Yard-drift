@@ -8,7 +8,6 @@ public class Rewardsystem : MonoBehaviour
     [SerializeField] chances chanceManager;
     [SerializeField] GameObject lostpanel;
     [SerializeField] deathManager deathmanager;
-
     [SerializeField] Button chancerewardbutton;
     [SerializeField] Button timerewardbutton;
 

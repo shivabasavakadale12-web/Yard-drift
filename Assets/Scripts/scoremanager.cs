@@ -11,7 +11,6 @@ public class scoremanager : MonoBehaviour
     [SerializeField] GameObject Winalllevelpanel;
     [SerializeField] Levelmanager levelmanager;
     [SerializeField] TimeManager timemanager;
-
     [SerializeField] Rewardsystem rewardsystem;
 
     public static scoremanager instance;
