@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87235a2a4205fcc4bae6b8631d61c339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Triangle_pickup
+  particleeffect: {fileID: 8740975676516857828, guid: 642fe10a371a4414b8b074d84af6075c, type: 3}
 --- !u!54 &6287415806219346168
 Rigidbody:
   m_ObjectHideFlags: 0

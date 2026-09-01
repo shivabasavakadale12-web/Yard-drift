@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class chances : MonoBehaviour
 {
@@ -9,8 +10,9 @@ public class chances : MonoBehaviour
     [SerializeField] TMP_Text finalobstaclehits;
     [SerializeField] Levelmanager levelmanager;
     [SerializeField] deathManager deathmanager;
+    [SerializeField] float delay = 1f;
 
-   public GameObject Player;
+    public GameObject Player;
    public int chance;
    public int chancetaken => levelmanager.CurrentLevelData.maxHits - chance;
 
@@ -45,13 +47,14 @@ public class chances : MonoBehaviour
         {
             Player.GetComponent<MeshRenderer>().enabled = false;
             Player.GetComponent<Collider>().enabled = false;
-            playerdeath();
+           StartCoroutine(playerdeath());
 
         }
     }
 
-    public void playerdeath()
+    public IEnumerator playerdeath()
     {
+      yield return new WaitForSeconds(delay);
       deathmanager.deadthseq();
     }
 }

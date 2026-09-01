@@ -8,6 +8,7 @@ public class Levelmanager : MonoBehaviour
     [SerializeField] TMP_Text leveltext;
     [SerializeField] TMP_Text currentleveltext;
     [SerializeField] LevelData[] levels;
+    [SerializeField] audioManager audiomanager;
 
     int currentlevelIndex = 0;
 
@@ -23,6 +24,8 @@ public class Levelmanager : MonoBehaviour
         currentlevelIndex = PlayerPrefs.GetInt("CurrentLevel", 0);
         leveltext.text = CurrentLevelData.levelNumber.ToString("00");
         currentleveltext.text = leveltext.text;
+
+        audiomanager.playLevelMusic(CurrentLevelData.levelNumber);
     }
 
     public void nextlevel()
