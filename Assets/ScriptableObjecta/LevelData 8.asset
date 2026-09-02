@@ -19,3 +19,4 @@ MonoBehaviour:
   triangleSpawnChance: 60
   obstacleSpawnChance: 40
   spawnInterval: 1.1
+  spawnRadius: 80

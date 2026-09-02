@@ -17,4 +17,6 @@ public class LevelData : ScriptableObject
     public float obstacleSpawnChance;
 
     public float spawnInterval;
+
+    public float spawnRadius;
 }

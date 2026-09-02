@@ -51,7 +51,7 @@ public class Spawner : MonoBehaviour
 
             BoxCollider zone = Spawners[randomspawn].GetComponent<BoxCollider>();
 
-            float xposition = Random.Range(-60f, 60f);
+            float xposition = Random.Range(-levelmanager.CurrentLevelData.spawnRadius, levelmanager.CurrentLevelData.spawnRadius);
             float zposition = Random.Range(zone.bounds.min.z, zone.bounds.max.z);
 
             Vector3 SpawnPosition = new Vector3(xposition, Spawners[randomspawn].position.y, zposition);
