@@ -9,13 +9,13 @@ public class Levelmanager : MonoBehaviour
     [SerializeField] TMP_Text currentleveltext;
     [SerializeField] LevelData[] levels;
     [SerializeField] audioManager audiomanager;
+    [SerializeField] GameObject timerewardtext;
+    [SerializeField] GameObject chancerewardtext;
 
     int currentlevelIndex = 0;
 
     const string currentscene = "GameScene";
     const string HighestUnlockedLevelKey = "HighestUnlockedLevel";
-
-
     public LevelData CurrentLevelData => levels[currentlevelIndex];
     public LevelData lastleveldata => levels[levels.Length - 1];
 
@@ -31,7 +31,8 @@ public class Levelmanager : MonoBehaviour
     public void nextlevel()
     {
         winpanel.SetActive(false);
-
+        timerewardtext.SetActive(false);
+        chancerewardtext.SetActive(false);
 
         if (currentlevelIndex == levels.Length - 1) return;
     

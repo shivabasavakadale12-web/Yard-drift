@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Rewardsystem : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class Rewardsystem : MonoBehaviour
     [SerializeField] deathManager deathmanager;
     [SerializeField] Button chancerewardbutton;
     [SerializeField] Button timerewardbutton;
+    [SerializeField] GameObject timerewardtext;
+    [SerializeField] GameObject chancerewardtext;
+    [SerializeField] GameObject timerewardavaible;
+    [SerializeField] GameObject chancerewardavaible;
 
     public GameObject player;
 
@@ -24,6 +29,7 @@ public class Rewardsystem : MonoBehaviour
 
     public void increasetime()
     {
+        timerewardtext.SetActive(true);
         rewardused = true;
         timemanger.time += 15;
         lostpanel.SetActive(false);
@@ -31,10 +37,17 @@ public class Rewardsystem : MonoBehaviour
         chancerewardbutton.interactable = false;
         deathmanager.continueafterreward();
         Time.timeScale = 1f;
+        Invoke("destroytimetext", 2f);
+    }
+
+    void destroytimetext()
+    {
+        timerewardtext.SetActive(false);
     }
 
     public void increasechance()
     {
+        chancerewardtext.SetActive(true);
         rewardused = true;
         chanceManager.chance += 2;
         lostpanel.SetActive(false);
@@ -44,7 +57,11 @@ public class Rewardsystem : MonoBehaviour
         player.GetComponent<Collider>().enabled = true;
         deathmanager.continueafterreward();
         Time.timeScale = 1f;
-
+        Invoke("destroychancetext", 2f); 
+    }
+    void destroychancetext()
+    {
+        chancerewardtext.SetActive(false);
     }
 
     void Start()
@@ -73,8 +90,15 @@ public class Rewardsystem : MonoBehaviour
         totaltimetaken = PlayerPrefs.GetFloat(TotalTimeKey, 0f);
         if (totaltimetaken >= 100 && !rewardused)
         {
+            timerewardavaible.SetActive(true);
             timerewardbutton.interactable = true;
-       }
+            Invoke("offtimeavaibletxt", 1f);
+        }
+    }
+
+    void offtimeavaibletxt()
+    {
+        timerewardavaible.SetActive(false);
     }
 
     public void savelevelchance()
@@ -91,9 +115,16 @@ public class Rewardsystem : MonoBehaviour
 
         if (totalchancetaken >= 8 && !rewardused)
         {
-            
+
+            chancerewardavaible.SetActive(true);
             chancerewardbutton.interactable = true;
+            Invoke("offchanceavaibletext", 1.2f);
         }
 
+    }
+
+    void offchanceavaibletext()
+    {
+        chancerewardavaible.SetActive(false);
     }
 }

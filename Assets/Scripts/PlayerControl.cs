@@ -11,7 +11,6 @@ public class PlayerControl : MonoBehaviour
     Rigidbody rb;
     Quaternion startRotation;
     float currenzangle;
-
     float acceleration = 80f;
     float deceleration = 30f;
     float maxSpeed = 200f;
